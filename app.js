@@ -3,13 +3,13 @@
 
   const PRODUCTS = [
     { id: "fresh200", name: "생블루베리 200g", price: 6900, unit: "원",
-      desc: "혼자 먹기 좋은 소포장", icon: "icon-berry", color: "#3c3a78" },
+      desc: "혼자 먹기 좋은 소포장", icon: "icon-berry", color: "#4a72b8" },
     { id: "fresh500", name: "생블루베리 500g", price: 14500, unit: "원",
-      desc: "가장 많이 찾는 인기 용량", icon: "icon-berry", color: "#4a3f8a" },
+      desc: "가장 많이 찾는 인기 용량", icon: "icon-berry", color: "#3a5fa0" },
     { id: "fresh1kg", name: "생블루베리 1kg", price: 26000, unit: "원",
-      desc: "넉넉하게 즐기는 가족 세트", icon: "icon-berry", color: "#5b59a3" },
+      desc: "넉넉하게 즐기는 가족 세트", icon: "icon-berry", color: "#2c4a8c" },
     { id: "fresh2kg", name: "생블루베리 2kg", price: 48000, unit: "원",
-      desc: "나눠 먹기 좋은 대용량", icon: "icon-berry", color: "#262150" },
+      desc: "나눠 먹기 좋은 대용량", icon: "icon-berry", color: "#16223f" },
   ];
 
   const STORAGE_KEY = "blueberry-cart";
