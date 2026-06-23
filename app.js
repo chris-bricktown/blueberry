@@ -3,17 +3,17 @@
 
   const PRODUCTS = [
     { id: "fresh250", name: "생블루베리 250g", price: 7900, unit: "원",
-      desc: "당일 수확해 바로 보내는 신선 생과", icon: "icon-berry", color: "#4b3f7a" },
+      desc: "당일 수확해 바로 보내는 신선 생과", icon: "icon-berry", color: "#3c3a78" },
     { id: "fresh500", name: "생블루베리 500g", price: 14500, unit: "원",
-      desc: "가장 많이 찾는 인기 용량", icon: "icon-berry", color: "#5b4b95" },
+      desc: "가장 많이 찾는 인기 용량", icon: "icon-berry", color: "#4a3f8a" },
     { id: "fresh1kg", name: "생블루베리 1kg", price: 26000, unit: "원",
-      desc: "넉넉하게 즐기는 가족 세트", icon: "icon-berry", color: "#6a5ab0" },
+      desc: "넉넉하게 즐기는 가족 세트", icon: "icon-berry", color: "#5b59a3" },
     { id: "frozen1kg", name: "냉동 블루베리 1kg", price: 18000, unit: "원",
-      desc: "급속냉동으로 영양과 맛을 그대로", icon: "icon-berry", color: "#6fa8dc" },
+      desc: "급속냉동으로 영양과 맛을 그대로", icon: "icon-berry", color: "#5a7ec2" },
     { id: "jam240", name: "블루베리 잼 240g", price: 9500, unit: "원",
-      desc: "과육이 살아있는 수제잼", icon: "icon-berry", color: "#7a3b69" },
+      desc: "과육이 살아있는 수제잼", icon: "icon-berry", color: "#6b3460" },
     { id: "juice500", name: "블루베리 원액 500ml", price: 15000, unit: "원",
-      desc: "물에 타 마시는 블루베리 주스 원액", icon: "icon-berry", color: "#3c3168" },
+      desc: "물에 타 마시는 블루베리 주스 원액", icon: "icon-berry", color: "#262150" },
   ];
 
   const STORAGE_KEY = "blueberry-cart";
@@ -58,7 +58,9 @@
       const card = document.createElement("div");
       card.className = "product-card";
       card.innerHTML = `
-        <svg class="product-icon" color="${p.color}"><use href="#${p.icon}"></use></svg>
+        <div class="icon-frame">
+          <svg class="product-icon" color="${p.color}"><use href="#${p.icon}"></use></svg>
+        </div>
         <h3>${p.name}</h3>
         <p class="product-desc">${p.desc}</p>
         <p class="product-price">${formatPrice(p.price)}</p>
@@ -140,7 +142,9 @@
       const row = document.createElement("div");
       row.className = "cart-item";
       row.innerHTML = `
-        <svg class="cart-item-icon" color="${p.color}"><use href="#${p.icon}"></use></svg>
+        <div class="icon-frame icon-frame-sm">
+          <svg class="cart-item-icon" color="${p.color}"><use href="#${p.icon}"></use></svg>
+        </div>
         <div class="cart-item-info">
           <div class="cart-item-name">${p.name}</div>
           <div class="cart-item-price">${formatPrice(p.price)} × ${qty} = ${formatPrice(p.price * qty)}</div>
@@ -188,7 +192,7 @@
     lines.push("");
     lines.push(`총 합계: ${formatPrice(cartTotal())}`);
     lines.push("");
-    lines.push("[블루베리팜 주문 요청입니다. 위 내용 확인 후 입금 안내 부탁드립니다.]");
+    lines.push("[황금블루베리굿농원 주문 요청입니다. 위 내용 확인 후 입금 안내 부탁드립니다.]");
     return lines.join("\n");
   }
 

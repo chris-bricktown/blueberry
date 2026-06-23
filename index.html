@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>블루베리팜 — 산지직송 블루베리 쇼핑몰</title>
+<title>황금블루베리굿농원 — 산지직송 블루베리 쇼핑몰</title>
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -11,11 +11,34 @@
 <!-- 재사용 SVG 아이콘 정의 -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
+    <radialGradient id="glossHighlight" cx="32%" cy="28%" r="55%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glossShade" cx="32%" cy="28%" r="78%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0" />
+      <stop offset="60%" stop-color="#000000" stop-opacity="0" />
+      <stop offset="100%" stop-color="#140f30" stop-opacity="0.55" />
+    </radialGradient>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
     <symbol id="icon-berry" viewBox="0 0 100 100">
+      <ellipse cx="50" cy="93" rx="30" ry="5" fill="#140f30" opacity="0.18" />
       <circle cx="35" cy="58" r="27" fill="currentColor" opacity="0.7" />
       <circle cx="63" cy="44" r="31" fill="currentColor" />
       <circle cx="54" cy="76" r="24" fill="currentColor" opacity="0.85" />
-      <g stroke="#fff" stroke-width="2.2" opacity="0.55" stroke-linecap="round">
+      <circle cx="35" cy="58" r="27" fill="url(#glossShade)" />
+      <circle cx="63" cy="44" r="31" fill="url(#glossShade)" />
+      <circle cx="54" cy="76" r="24" fill="url(#glossShade)" />
+      <circle cx="58" cy="35" r="10" fill="url(#glossHighlight)" />
+      <circle cx="30" cy="50" r="6" fill="url(#glossHighlight)" opacity="0.7" />
+      <circle cx="48" cy="67" r="7" fill="url(#glossHighlight)" opacity="0.8" />
+      <g stroke="#15102c" stroke-width="2" opacity="0.45" stroke-linecap="round">
         <path d="M35 49 L35 55 M31 52 L39 52" />
         <path d="M63 31 L63 37 M59 34 L67 34" />
         <path d="M54 65 L54 71 M50 68 L58 68" />
@@ -23,16 +46,24 @@
     </symbol>
     <symbol id="icon-leaf" viewBox="0 0 100 100">
       <path d="M20 80 C20 40 60 20 85 15 C80 45 65 80 20 80 Z" fill="currentColor" />
-      <path d="M22 78 C40 60 55 45 83 17" stroke="#fff" stroke-width="3" fill="none" opacity="0.4" stroke-linecap="round" />
+      <path d="M20 80 C20 40 60 20 85 15 C80 45 65 80 20 80 Z" fill="url(#glossShade)" />
+      <path d="M22 78 C40 60 55 45 83 17" stroke="#fff" stroke-width="3" fill="none" opacity="0.35" stroke-linecap="round" />
+      <ellipse cx="38" cy="38" rx="14" ry="9" fill="url(#glossHighlight)" opacity="0.8" />
     </symbol>
     <symbol id="icon-truck" viewBox="0 0 100 100">
       <rect x="10" y="35" width="50" height="32" rx="4" fill="currentColor" />
+      <rect x="10" y="35" width="50" height="32" rx="4" fill="url(#glossShade)" />
       <path d="M60 45 H82 L92 58 V67 H60 Z" fill="currentColor" opacity="0.8" />
-      <circle cx="30" cy="75" r="9" fill="#2c2540" />
-      <circle cx="76" cy="75" r="9" fill="#2c2540" />
+      <path d="M60 45 H82 L92 58 V67 H60 Z" fill="url(#glossShade)" />
+      <rect x="14" y="39" width="40" height="10" rx="3" fill="url(#glossHighlight)" opacity="0.7" />
+      <circle cx="30" cy="75" r="9" fill="#1c1740" />
+      <circle cx="76" cy="75" r="9" fill="#1c1740" />
     </symbol>
     <symbol id="icon-sun" viewBox="0 0 100 100">
-      <circle cx="50" cy="50" r="22" fill="currentColor" />
+      <g filter="url(#softGlow)">
+        <circle cx="50" cy="50" r="20" fill="currentColor" />
+      </g>
+      <circle cx="50" cy="50" r="20" fill="url(#glossHighlight)" opacity="0.6" />
       <g stroke="currentColor" stroke-width="6" stroke-linecap="round">
         <path d="M50 8 L50 20" /><path d="M50 80 L50 92" />
         <path d="M8 50 L20 50" /><path d="M80 50 L92 50" />
@@ -46,8 +77,8 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="#top">
-      <svg class="brand-icon" color="#4b3f7a"><use href="#icon-berry"></use></svg>
-      블루베리팜
+      <svg class="brand-icon" color="#3c3a78"><use href="#icon-berry"></use></svg>
+      황금블루베리굿농원
     </a>
     <nav class="main-nav">
       <a href="#products">상품</a>
@@ -70,14 +101,14 @@
         <h1>햇살 가득 담은 블루베리,<br>농장에서 바로 보내드려요</h1>
         <p class="hero-desc">
           주문 들어온 날 직접 수확해서 가장 신선한 상태로 포장합니다.
-          중간 유통 없이 농장에서 식탁까지 — 블루베리팜이 약속합니다.
+          중간 유통 없이 농장에서 식탁까지 — 황금블루베리굿농원이 약속합니다.
         </p>
         <a href="#products" class="btn btn-primary">상품 보러가기</a>
       </div>
       <div class="hero-art" aria-hidden="true">
-        <svg class="hero-berry" color="#4b3f7a"><use href="#icon-berry"></use></svg>
-        <svg class="hero-berry hero-berry-2" color="#6a5ab0"><use href="#icon-berry"></use></svg>
-        <svg class="hero-leaf" color="#5c8a51"><use href="#icon-leaf"></use></svg>
+        <svg class="hero-berry" color="#3c3a78"><use href="#icon-berry"></use></svg>
+        <svg class="hero-berry hero-berry-2" color="#5b59a3"><use href="#icon-berry"></use></svg>
+        <svg class="hero-leaf" color="#4f7a55"><use href="#icon-leaf"></use></svg>
       </div>
     </div>
   </section>
@@ -85,17 +116,23 @@
   <section class="features">
     <div class="wrap features-grid">
       <div class="feature-card">
-        <svg class="feature-icon" color="#5c8a51"><use href="#icon-leaf"></use></svg>
+        <div class="icon-frame">
+          <svg class="feature-icon" color="#4f7a55"><use href="#icon-leaf"></use></svg>
+        </div>
         <h3>무농약 재배</h3>
         <p>건강을 생각해 농약과 화학비료 없이 정성껏 키운 블루베리예요.</p>
       </div>
       <div class="feature-card">
-        <svg class="feature-icon" color="#3b6ea5"><use href="#icon-truck"></use></svg>
+        <div class="icon-frame">
+          <svg class="feature-icon" color="#3a4f8a"><use href="#icon-truck"></use></svg>
+        </div>
         <h3>산지직송</h3>
         <p>수확 후 24시간 안에 포장해 가장 신선한 상태로 배송해요.</p>
       </div>
       <div class="feature-card">
-        <svg class="feature-icon" color="#d99a2b"><use href="#icon-sun"></use></svg>
+        <div class="icon-frame">
+          <svg class="feature-icon" color="#e0a925"><use href="#icon-sun"></use></svg>
+        </div>
         <h3>당일 수확</h3>
         <p>주문이 들어오면 그날 직접 따서 보내는 진짜 산지직송이에요.</p>
       </div>
@@ -104,7 +141,7 @@
 
   <section id="products" class="products">
     <div class="wrap">
-      <h2 class="section-title">블루베리팜 상품</h2>
+      <h2 class="section-title">황금블루베리굿농원 상품</h2>
       <p class="section-desc">신선한 생과부터 잼, 원액까지 — 매일 직접 만들고 포장합니다.</p>
       <div id="productGrid" class="product-grid"></div>
     </div>
@@ -113,12 +150,12 @@
   <section id="story" class="story">
     <div class="wrap story-inner">
       <div class="story-art" aria-hidden="true">
-        <svg class="story-berry" color="#3c3168"><use href="#icon-berry"></use></svg>
+        <svg class="story-berry" color="#262150"><use href="#icon-berry"></use></svg>
       </div>
       <div class="story-text">
         <h2 class="section-title">농장 이야기</h2>
         <p>
-          전북 고창의 작은 언덕에서 시작한 <strong>양지블루베리농장</strong>은
+          전북 고창의 작은 언덕에서 시작한 <strong>황금블루베리굿농원</strong>은
           10년 넘게 블루베리만 키워온 가족 농장입니다. 흙을 살리는 농법으로
           나무를 가꾸고, 가장 달콤한 시기에 손으로 직접 따서 보내드려요.
         </p>
@@ -179,7 +216,7 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <p>© 2026 블루베리팜. 모든 상품·연락처 정보는 예시이며 실제 운영 정보로 교체해 주세요.</p>
+    <p>© 2026 황금블루베리굿농원. 모든 상품·연락처 정보는 예시이며 실제 운영 정보로 교체해 주세요.</p>
   </div>
 </footer>
 
