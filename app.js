@@ -2,18 +2,14 @@
   "use strict";
 
   const PRODUCTS = [
-    { id: "fresh250", name: "생블루베리 250g", price: 7900, unit: "원",
-      desc: "당일 수확해 바로 보내는 신선 생과", icon: "icon-berry", color: "#3c3a78" },
+    { id: "fresh200", name: "생블루베리 200g", price: 6900, unit: "원",
+      desc: "혼자 먹기 좋은 소포장", icon: "icon-berry", color: "#3c3a78" },
     { id: "fresh500", name: "생블루베리 500g", price: 14500, unit: "원",
       desc: "가장 많이 찾는 인기 용량", icon: "icon-berry", color: "#4a3f8a" },
     { id: "fresh1kg", name: "생블루베리 1kg", price: 26000, unit: "원",
       desc: "넉넉하게 즐기는 가족 세트", icon: "icon-berry", color: "#5b59a3" },
-    { id: "frozen1kg", name: "냉동 블루베리 1kg", price: 18000, unit: "원",
-      desc: "급속냉동으로 영양과 맛을 그대로", icon: "icon-berry", color: "#5a7ec2" },
-    { id: "jam240", name: "블루베리 잼 240g", price: 9500, unit: "원",
-      desc: "과육이 살아있는 수제잼", icon: "icon-berry", color: "#6b3460" },
-    { id: "juice500", name: "블루베리 원액 500ml", price: 15000, unit: "원",
-      desc: "물에 타 마시는 블루베리 주스 원액", icon: "icon-berry", color: "#262150" },
+    { id: "fresh2kg", name: "생블루베리 2kg", price: 48000, unit: "원",
+      desc: "나눠 먹기 좋은 대용량", icon: "icon-berry", color: "#262150" },
   ];
 
   const STORAGE_KEY = "blueberry-cart";
