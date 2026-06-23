@@ -101,7 +101,12 @@ h1, h2, h3 { margin: 0 0 12px; letter-spacing: -0.01em; font-weight: 800; }
 }
 
 /* Hero */
-.hero { padding: 44px 0 56px; }
+.hero {
+  padding: 44px 0 56px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.85) 55%, #fff 100%),
+    url("images/hero-bg.jpg") center top / cover no-repeat;
+}
 .hero-inner {
   display: flex;
   align-items: center;
