@@ -2,19 +2,18 @@
   "use strict";
 
   const PRODUCTS = [
-    { id: "fresh200", name: "생블루베리 200g", price: 6900, unit: "원",
-      desc: "혼자 먹기 좋은 소포장", icon: "icon-berry", color: "#4a72b8" },
-    { id: "fresh500", name: "생블루베리 500g", price: 14500, unit: "원",
-      desc: "가장 많이 찾는 인기 용량", icon: "icon-berry", color: "#3a5fa0" },
-    { id: "fresh1kg", name: "생블루베리 1kg", price: 26000, unit: "원",
-      desc: "넉넉하게 즐기는 가족 세트", icon: "icon-berry", color: "#2c4a8c" },
-    { id: "fresh2kg", name: "생블루베리 2kg", price: 48000, unit: "원",
-      desc: "나눠 먹기 좋은 대용량", icon: "icon-berry", color: "#16223f" },
+    { id: "fresh200", name: "당일수확 생블루베리 200g", price: 7900, weight: "200g",
+      photo: "images/product-200g.jpg" },
+    { id: "fresh500", name: "당일수확 생블루베리 500g", price: 18900, weight: "500g",
+      photo: "images/product-500g.jpg" },
+    { id: "fresh1kg", name: "당일수확 생블루베리 1kg", price: 32900, weight: "1kg",
+      photo: "images/product-1kg.jpg" },
+    { id: "fresh2kg", name: "당일수확 생블루베리 2kg", price: 59800, weight: "2kg",
+      photo: "images/product-2kg.jpg" },
   ];
 
   const STORAGE_KEY = "blueberry-cart";
   let cart = loadCart();
-  let pendingQty = {}; // 상품 카드의 수량 선택기 (장바구니에 담기 전 값)
 
   const productGrid = document.getElementById("productGrid");
   const cartItemsEl = document.getElementById("cartItems");
@@ -50,23 +49,21 @@
   function renderProducts() {
     productGrid.innerHTML = "";
     PRODUCTS.forEach((p) => {
-      pendingQty[p.id] = pendingQty[p.id] || 1;
       const card = document.createElement("div");
       card.className = "product-card";
       card.innerHTML = `
-        <div class="icon-frame">
-          <svg class="product-icon" color="${p.color}"><use href="#${p.icon}"></use></svg>
+        <div class="product-photo-wrap">
+          <img class="product-photo" src="${p.photo}" alt="${p.name}" />
+          <span class="product-weight-badge">${p.weight}</span>
         </div>
-        <h3>${p.name}</h3>
-        <p class="product-desc">${p.desc}</p>
-        <p class="product-price">${formatPrice(p.price)}</p>
-        <div class="product-actions">
-          <div class="qty-control">
-            <button data-action="dec" data-id="${p.id}" aria-label="수량 감소">−</button>
-            <span data-qty="${p.id}">${pendingQty[p.id]}</span>
-            <button data-action="inc" data-id="${p.id}" aria-label="수량 증가">+</button>
+        <div class="product-body">
+          <h3>${p.name}</h3>
+          <p class="product-price">${formatPrice(p.price)}</p>
+          <div class="product-tags">
+            <span class="tag-pill green">무농약 재배</span>
+            <span class="tag-pill navy">무료배송</span>
           </div>
-          <button class="add-btn" data-action="add" data-id="${p.id}">담기</button>
+          <button class="add-btn" data-action="add" data-id="${p.id}">구매하기</button>
         </div>
       `;
       productGrid.appendChild(card);
@@ -76,16 +73,8 @@
   productGrid.addEventListener("click", (e) => {
     const btn = e.target.closest("button[data-action]");
     if (!btn) return;
-    const id = btn.dataset.id;
-    const action = btn.dataset.action;
-    if (action === "inc") {
-      pendingQty[id] = Math.min(99, pendingQty[id] + 1);
-      productGrid.querySelector(`[data-qty="${id}"]`).textContent = pendingQty[id];
-    } else if (action === "dec") {
-      pendingQty[id] = Math.max(1, pendingQty[id] - 1);
-      productGrid.querySelector(`[data-qty="${id}"]`).textContent = pendingQty[id];
-    } else if (action === "add") {
-      addToCart(id, pendingQty[id]);
+    if (btn.dataset.action === "add") {
+      addToCart(btn.dataset.id, 1);
     }
   });
 
@@ -93,7 +82,8 @@
     cart[id] = (cart[id] || 0) + qty;
     saveCart();
     renderCart();
-    showToast(`${findProduct(id).name} ${qty}개를 담았어요`);
+    showToast(`${findProduct(id).name}을 담았어요`);
+    openCart();
   }
 
   function changeCartQty(id, delta) {
@@ -138,9 +128,7 @@
       const row = document.createElement("div");
       row.className = "cart-item";
       row.innerHTML = `
-        <div class="icon-frame icon-frame-sm">
-          <svg class="cart-item-icon" color="${p.color}"><use href="#${p.icon}"></use></svg>
-        </div>
+        <img class="cart-item-photo" src="${p.photo}" alt="${p.name}" />
         <div class="cart-item-info">
           <div class="cart-item-name">${p.name}</div>
           <div class="cart-item-price">${formatPrice(p.price)} × ${qty} = ${formatPrice(p.price * qty)}</div>
