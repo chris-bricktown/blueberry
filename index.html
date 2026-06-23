@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>블루베리팜 — 산지직송 블루베리 쇼핑몰</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- 재사용 SVG 아이콘 정의 -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="icon-berry" viewBox="0 0 100 100">
+      <circle cx="35" cy="58" r="27" fill="currentColor" opacity="0.7" />
+      <circle cx="63" cy="44" r="31" fill="currentColor" />
+      <circle cx="54" cy="76" r="24" fill="currentColor" opacity="0.85" />
+      <g stroke="#fff" stroke-width="2.2" opacity="0.55" stroke-linecap="round">
+        <path d="M35 49 L35 55 M31 52 L39 52" />
+        <path d="M63 31 L63 37 M59 34 L67 34" />
+        <path d="M54 65 L54 71 M50 68 L58 68" />
+      </g>
+    </symbol>
+    <symbol id="icon-leaf" viewBox="0 0 100 100">
+      <path d="M20 80 C20 40 60 20 85 15 C80 45 65 80 20 80 Z" fill="currentColor" />
+      <path d="M22 78 C40 60 55 45 83 17" stroke="#fff" stroke-width="3" fill="none" opacity="0.4" stroke-linecap="round" />
+    </symbol>
+    <symbol id="icon-truck" viewBox="0 0 100 100">
+      <rect x="10" y="35" width="50" height="32" rx="4" fill="currentColor" />
+      <path d="M60 45 H82 L92 58 V67 H60 Z" fill="currentColor" opacity="0.8" />
+      <circle cx="30" cy="75" r="9" fill="#2c2540" />
+      <circle cx="76" cy="75" r="9" fill="#2c2540" />
+    </symbol>
+    <symbol id="icon-sun" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="22" fill="currentColor" />
+      <g stroke="currentColor" stroke-width="6" stroke-linecap="round">
+        <path d="M50 8 L50 20" /><path d="M50 80 L50 92" />
+        <path d="M8 50 L20 50" /><path d="M80 50 L92 50" />
+        <path d="M19 19 L27 27" /><path d="M73 73 L81 81" />
+        <path d="M81 19 L73 27" /><path d="M27 73 L19 81" />
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top">
+      <svg class="brand-icon" color="#4b3f7a"><use href="#icon-berry"></use></svg>
+      블루베리팜
+    </a>
+    <nav class="main-nav">
+      <a href="#products">상품</a>
+      <a href="#story">농장 이야기</a>
+      <a href="#reviews">후기</a>
+      <a href="#contact">문의</a>
+    </nav>
+    <button id="cartBtn" class="cart-btn" aria-label="장바구니 열기">
+      🧺 장바구니 <span id="cartCount" class="cart-count">0</span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow">전북 고창 · 무농약 직영 농장</p>
+        <h1>햇살 가득 담은 블루베리,<br>농장에서 바로 보내드려요</h1>
+        <p class="hero-desc">
+          주문 들어온 날 직접 수확해서 가장 신선한 상태로 포장합니다.
+          중간 유통 없이 농장에서 식탁까지 — 블루베리팜이 약속합니다.
+        </p>
+        <a href="#products" class="btn btn-primary">상품 보러가기</a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg class="hero-berry" color="#4b3f7a"><use href="#icon-berry"></use></svg>
+        <svg class="hero-berry hero-berry-2" color="#6a5ab0"><use href="#icon-berry"></use></svg>
+        <svg class="hero-leaf" color="#5c8a51"><use href="#icon-leaf"></use></svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="wrap features-grid">
+      <div class="feature-card">
+        <svg class="feature-icon" color="#5c8a51"><use href="#icon-leaf"></use></svg>
+        <h3>무농약 재배</h3>
+        <p>건강을 생각해 농약과 화학비료 없이 정성껏 키운 블루베리예요.</p>
+      </div>
+      <div class="feature-card">
+        <svg class="feature-icon" color="#3b6ea5"><use href="#icon-truck"></use></svg>
+        <h3>산지직송</h3>
+        <p>수확 후 24시간 안에 포장해 가장 신선한 상태로 배송해요.</p>
+      </div>
+      <div class="feature-card">
+        <svg class="feature-icon" color="#d99a2b"><use href="#icon-sun"></use></svg>
+        <h3>당일 수확</h3>
+        <p>주문이 들어오면 그날 직접 따서 보내는 진짜 산지직송이에요.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="products" class="products">
+    <div class="wrap">
+      <h2 class="section-title">블루베리팜 상품</h2>
+      <p class="section-desc">신선한 생과부터 잼, 원액까지 — 매일 직접 만들고 포장합니다.</p>
+      <div id="productGrid" class="product-grid"></div>
+    </div>
+  </section>
+
+  <section id="story" class="story">
+    <div class="wrap story-inner">
+      <div class="story-art" aria-hidden="true">
+        <svg class="story-berry" color="#3c3168"><use href="#icon-berry"></use></svg>
+      </div>
+      <div class="story-text">
+        <h2 class="section-title">농장 이야기</h2>
+        <p>
+          전북 고창의 작은 언덕에서 시작한 <strong>양지블루베리농장</strong>은
+          10년 넘게 블루베리만 키워온 가족 농장입니다. 흙을 살리는 농법으로
+          나무를 가꾸고, 가장 달콤한 시기에 손으로 직접 따서 보내드려요.
+        </p>
+        <p>
+          포장 박스를 열었을 때 농장의 향이 느껴지는 그 순간까지 책임지는 것이
+          저희의 목표입니다. 작은 농장이지만 정직하게, 오래 함께하고 싶습니다.
+        </p>
+        <p class="story-note">
+          ※ 위 농장 정보는 예시 콘텐츠입니다. 실제 운영 시 농장 소개, 사진,
+          인증 정보 등으로 교체해 주세요.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews" class="reviews">
+    <div class="wrap">
+      <h2 class="section-title">고객 후기</h2>
+      <div class="review-grid">
+        <article class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>“알이 정말 크고 달아요. 받자마자 향이 확 느껴졌어요.”</p>
+          <span class="reviewer">구매자 김**님</span>
+        </article>
+        <article class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>“냉동도 시켜봤는데 스무디 만들 때 최고예요. 재구매 의사 100%.”</p>
+          <span class="reviewer">구매자 이**님</span>
+        </article>
+        <article class="review-card">
+          <div class="stars">★★★★☆</div>
+          <p>“잼이 너무 맛있어서 선물용으로 또 주문했어요.”</p>
+          <span class="reviewer">구매자 박**님</span>
+        </article>
+      </div>
+      <p class="story-note center">※ 후기는 예시 콘텐츠입니다. 실제 고객 후기로 교체해 주세요.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap contact-inner">
+      <h2 class="section-title">문의 / 주문 안내</h2>
+      <p class="section-desc">
+        이 쇼핑몰은 별도 결제 시스템 없이 운영됩니다.
+        장바구니에 상품을 담고 <strong>주문 요청하기</strong>를 누르면
+        주문 내용을 전화·문자로 보내드릴 수 있도록 안내해 드려요.
+      </p>
+      <ul class="contact-list">
+        <li>📞 전화 주문: <a href="tel:01000000000">010-0000-0000</a> (예시)</li>
+        <li>✉️ 이메일: <a href="mailto:order@blueberryfarm.example">order@blueberryfarm.example</a> (예시)</li>
+        <li>📍 농장 위치: 전북 고창군 ○○면 ○○로 123 (예시)</li>
+        <li>📷 인스타그램: <a href="#" onclick="return false;">@blueberry_farm_example</a> (예시)</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 블루베리팜. 모든 상품·연락처 정보는 예시이며 실제 운영 정보로 교체해 주세요.</p>
+  </div>
+</footer>
+
+<!-- 장바구니 슬라이드 패널 -->
+<div id="cartOverlay" class="overlay"></div>
+<aside id="cartPanel" class="cart-panel" aria-label="장바구니">
+  <div class="cart-panel-header">
+    <h2>장바구니</h2>
+    <button id="cartClose" class="icon-btn" aria-label="닫기">✕</button>
+  </div>
+  <div id="cartItems" class="cart-items"></div>
+  <div class="cart-panel-footer">
+    <div class="cart-total-row">
+      <span>총 합계</span>
+      <strong id="cartTotal">0원</strong>
+    </div>
+    <button id="orderBtn" class="btn btn-primary btn-block">주문 요청하기</button>
+  </div>
+</aside>
+
+<!-- 주문 요청 모달 -->
+<div id="orderOverlay" class="overlay"></div>
+<div id="orderModal" class="modal" role="dialog" aria-label="주문 요청">
+  <div class="modal-header">
+    <h2>주문 요청 보내기</h2>
+    <button id="orderClose" class="icon-btn" aria-label="닫기">✕</button>
+  </div>
+  <p class="modal-desc">
+    아래 주문 내용을 복사해서 전화·문자·카카오톡으로 보내주시면
+    확인 후 입금 계좌와 배송 안내를 드립니다.
+  </p>
+  <textarea id="orderSummary" class="order-summary" readonly></textarea>
+  <div class="modal-actions">
+    <button id="copyOrderBtn" class="btn btn-secondary">📋 주문 내용 복사</button>
+    <a id="smsOrderBtn" class="btn btn-secondary" href="#">💬 문자로 보내기</a>
+    <a id="telOrderBtn" class="btn btn-secondary" href="tel:01000000000">📞 전화하기</a>
+  </div>
+  <p class="modal-note">
+    ※ 결제 시스템이 없는 쇼핑몰이라 주문은 연락처를 통해 직접 확인합니다.
+  </p>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
