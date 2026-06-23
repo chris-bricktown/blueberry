@@ -4,9 +4,6 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>황금블루베리굿농원 — 산지직송 블루베리 쇼핑몰</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -14,65 +11,59 @@
 <!-- 재사용 SVG 아이콘 정의 -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <radialGradient id="glossHighlight" cx="32%" cy="28%" r="55%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
-    </radialGradient>
-    <radialGradient id="glossShade" cx="32%" cy="28%" r="78%">
-      <stop offset="0%" stop-color="#000000" stop-opacity="0" />
-      <stop offset="60%" stop-color="#000000" stop-opacity="0" />
-      <stop offset="100%" stop-color="#140f30" stop-opacity="0.55" />
-    </radialGradient>
-    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="6" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-    <symbol id="icon-berry" viewBox="0 0 100 100">
-      <ellipse cx="50" cy="93" rx="30" ry="5" fill="#140f30" opacity="0.18" />
-      <circle cx="35" cy="58" r="27" fill="currentColor" opacity="0.7" />
-      <circle cx="63" cy="44" r="31" fill="currentColor" />
-      <circle cx="54" cy="76" r="24" fill="currentColor" opacity="0.85" />
-      <circle cx="35" cy="58" r="27" fill="url(#glossShade)" />
-      <circle cx="63" cy="44" r="31" fill="url(#glossShade)" />
-      <circle cx="54" cy="76" r="24" fill="url(#glossShade)" />
-      <circle cx="58" cy="35" r="10" fill="url(#glossHighlight)" />
-      <circle cx="30" cy="50" r="6" fill="url(#glossHighlight)" opacity="0.7" />
-      <circle cx="48" cy="67" r="7" fill="url(#glossHighlight)" opacity="0.8" />
-      <g stroke="#15102c" stroke-width="2" opacity="0.45" stroke-linecap="round">
-        <path d="M35 49 L35 55 M31 52 L39 52" />
-        <path d="M63 31 L63 37 M59 34 L67 34" />
-        <path d="M54 65 L54 71 M50 68 L58 68" />
-      </g>
+    <symbol id="icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 21s-7-7.2-7-12a7 7 0 1 1 14 0c0 4.8-7 12-7 12Z" />
+      <circle cx="12" cy="9" r="2.5" />
     </symbol>
-    <symbol id="icon-leaf" viewBox="0 0 100 100">
-      <path d="M20 80 C20 40 60 20 85 15 C80 45 65 80 20 80 Z" fill="currentColor" />
-      <path d="M20 80 C20 40 60 20 85 15 C80 45 65 80 20 80 Z" fill="url(#glossShade)" />
-      <path d="M22 78 C40 60 55 45 83 17" stroke="#fff" stroke-width="3" fill="none" opacity="0.35" stroke-linecap="round" />
-      <ellipse cx="38" cy="38" rx="14" ry="9" fill="url(#glossHighlight)" opacity="0.8" />
+    <symbol id="icon-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 19c-1-7 2-13 14-14-1 12-7 15-14 14Z" />
+      <path d="M5 19c3-4 6-7 11-10" />
     </symbol>
-    <symbol id="icon-truck" viewBox="0 0 100 100">
-      <rect x="10" y="35" width="50" height="32" rx="4" fill="currentColor" />
-      <rect x="10" y="35" width="50" height="32" rx="4" fill="url(#glossShade)" />
-      <path d="M60 45 H82 L92 58 V67 H60 Z" fill="currentColor" opacity="0.8" />
-      <path d="M60 45 H82 L92 58 V67 H60 Z" fill="url(#glossShade)" />
-      <rect x="14" y="39" width="40" height="10" rx="3" fill="url(#glossHighlight)" opacity="0.7" />
-      <circle cx="30" cy="75" r="9" fill="#1c1740" />
-      <circle cx="76" cy="75" r="9" fill="#1c1740" />
+    <symbol id="icon-basket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 9h16l-1.5 10a2 2 0 0 1-2 1.8H7.5a2 2 0 0 1-2-1.8L4 9Z" />
+      <path d="M8 9 9.5 4M16 9 14.5 4M2.5 9h19" />
     </symbol>
-    <symbol id="icon-sun" viewBox="0 0 100 100">
-      <g filter="url(#softGlow)">
-        <circle cx="50" cy="50" r="20" fill="currentColor" />
-      </g>
-      <circle cx="50" cy="50" r="20" fill="url(#glossHighlight)" opacity="0.6" />
-      <g stroke="currentColor" stroke-width="6" stroke-linecap="round">
-        <path d="M50 8 L50 20" /><path d="M50 80 L50 92" />
-        <path d="M8 50 L20 50" /><path d="M80 50 L92 50" />
-        <path d="M19 19 L27 27" /><path d="M73 73 L81 81" />
-        <path d="M81 19 L73 27" /><path d="M27 73 L19 81" />
-      </g>
+    <symbol id="icon-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="8" width="12" height="8" rx="1.5" />
+      <path d="M14 11h4l3 3v2h-7z" />
+      <circle cx="7" cy="18" r="1.7" />
+      <circle cx="17.5" cy="18" r="1.7" />
+    </symbol>
+    <symbol id="icon-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 20s-7.5-4.6-9.8-9C.8 7.6 2.4 4 6 4c2.2 0 3.7 1.3 4.5 2.6C11.3 5.3 12.8 4 15 4c3.6 0 5.2 3.6 3.8 7-2.3 4.4-9.8 9-9.8 9Z" />
+    </symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l4 2" />
+    </symbol>
+    <symbol id="icon-package" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 7l9-4 9 4-9 4-9-4Z" />
+      <path d="M3 7v10l9 4 9-4V7" />
+      <path d="M12 11v10" />
+    </symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 4h3l2 5-2.5 1.5a12 12 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2C9.5 21 3 14.5 3 6a2 2 0 0 1 2-2Z" />
+    </symbol>
+    <symbol id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="4.5" />
+      <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M19.4 4.6l-2.1 2.1M6.7 17.3l-2.1 2.1" />
+    </symbol>
+    <symbol id="icon-drop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />
+    </symbol>
+    <symbol id="icon-check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M8 12.5l2.5 2.5L16 9.5" />
+    </symbol>
+    <symbol id="icon-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="9" cy="20" r="1.4" />
+      <circle cx="17" cy="20" r="1.4" />
+      <path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.6L20.5 8H6" />
+    </symbol>
+    <symbol id="icon-berry" viewBox="0 0 100 100" fill="currentColor">
+      <circle cx="35" cy="58" r="27" opacity="0.7" />
+      <circle cx="63" cy="44" r="31" />
+      <circle cx="54" cy="76" r="24" opacity="0.85" />
     </symbol>
   </defs>
 </svg>
@@ -80,131 +71,151 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="#top">
-      <svg class="brand-icon" color="#2c4a8c"><use href="#icon-berry"></use></svg>
+      <svg class="brand-icon" color="#3f9b14"><use href="#icon-leaf"></use></svg>
       황금블루베리굿농원
     </a>
     <nav class="main-nav">
-      <a href="#products">상품</a>
-      <a href="#story">농장 이야기</a>
-      <a href="#reviews">후기</a>
-      <a href="#contact">문의</a>
+      <a href="#products">상품안내</a>
+      <a href="#story">농장소개</a>
+      <a href="#reviews">구매후기</a>
+      <a href="#contact">고객센터</a>
     </nav>
     <button id="cartBtn" class="cart-btn" aria-label="장바구니 열기">
-      🧺 장바구니 <span id="cartCount" class="cart-count">0</span>
+      <svg class="cart-btn-icon"><use href="#icon-cart"></use></svg>
+      장바구니 <span id="cartCount" class="cart-count">0</span>
     </button>
   </div>
 </header>
 
 <main id="top">
 
-  <section class="main-banner">
-    <img src="images/banner.jpg" alt="황금블루베리굿농원 — 당신의 식탁에 신선함을 직접 배송합니다" />
-  </section>
-
   <section class="hero">
     <div class="wrap hero-inner">
       <div class="hero-text">
-        <p class="eyebrow">충북 영동 · 무농약 직영 농장</p>
-        <h1>햇살 가득 담은 블루베리,<br>농장에서 바로 보내드려요</h1>
-        <p class="hero-desc">
-          주문 들어온 날 직접 수확해서 가장 신선한 상태로 포장합니다.
-          중간 유통 없이 농장에서 식탁까지 — 황금블루베리굿농원이 약속합니다.
+        <p class="eyebrow">
+          <svg class="eyebrow-icon" color="#3f9b14"><use href="#icon-leaf"></use></svg>
+          충북 영동 · 직영농장
         </p>
-        <a href="#products" class="btn btn-primary">상품 보러가기</a>
-      </div>
-      <div class="hero-art" aria-hidden="true">
-        <svg class="hero-berry" color="#2c4a8c"><use href="#icon-berry"></use></svg>
-        <svg class="hero-berry hero-berry-2" color="#4a72b8"><use href="#icon-berry"></use></svg>
-        <svg class="hero-leaf" color="#3f9b14"><use href="#icon-leaf"></use></svg>
-      </div>
-    </div>
-  </section>
+        <h1>오늘 수확한 <span class="accent">블루베리</span>를<br><span class="accent">내일</span> 받아보세요</h1>
+        <p class="hero-desc">당일 수확 · 산지직송 · 무농약 재배</p>
 
-  <section class="features">
-    <div class="wrap features-grid">
-      <div class="feature-card">
-        <div class="icon-frame">
-          <svg class="feature-icon" color="#3f9b14"><use href="#icon-leaf"></use></svg>
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <svg class="trust-icon"><use href="#icon-pin"></use></svg>
+            <span>충북 영동<br>직영농장</span>
+          </div>
+          <div class="trust-badge">
+            <svg class="trust-icon"><use href="#icon-leaf"></use></svg>
+            <span>무농약<br>안전 재배</span>
+          </div>
+          <div class="trust-badge">
+            <svg class="trust-icon"><use href="#icon-basket"></use></svg>
+            <span>당일 수확<br>신선한 배송</span>
+          </div>
+          <div class="trust-badge">
+            <svg class="trust-icon"><use href="#icon-truck"></use></svg>
+            <span>산지직송<br>빠른 배송</span>
+          </div>
+          <div class="trust-badge">
+            <svg class="trust-icon"><use href="#icon-heart"></use></svg>
+            <span>고객만족도<br>98%</span>
+          </div>
         </div>
-        <h3>무농약 재배</h3>
-        <p>건강을 생각해 농약과 화학비료 없이 정성껏 키운 블루베리예요.</p>
+
+        <a href="#products" class="btn btn-primary">오늘 수확 블루베리 구매하기 →</a>
       </div>
-      <div class="feature-card">
-        <div class="icon-frame">
-          <svg class="feature-icon" color="#1d8fd1"><use href="#icon-truck"></use></svg>
-        </div>
-        <h3>산지직송</h3>
-        <p>수확 후 24시간 안에 포장해 가장 신선한 상태로 배송해요.</p>
-      </div>
-      <div class="feature-card">
-        <div class="icon-frame">
-          <svg class="feature-icon" color="#f28c0f"><use href="#icon-sun"></use></svg>
-        </div>
-        <h3>당일 수확</h3>
-        <p>주문이 들어오면 그날 직접 따서 보내는 진짜 산지직송이에요.</p>
+      <div class="hero-art">
+        <img src="images/hero-photo.jpg" alt="오늘 수확한 신선한 블루베리" />
       </div>
     </div>
   </section>
 
   <section id="products" class="products">
     <div class="wrap">
-      <h2 class="section-title">황금블루베리굿농원 상품</h2>
-      <p class="section-desc">당일 수확한 신선한 생블루베리만 정성껏 포장해 보내드립니다.</p>
+      <p class="eyebrow eyebrow-dash">신선함이 살아있는</p>
+      <h2 class="section-title">당일수확 생블루베리</h2>
+      <p class="section-desc">좋은 토양, 깨끗한 공기, 정성 가득한 블루베리를 산지에서 바로 보내드립니다.</p>
       <div id="productGrid" class="product-grid"></div>
-    </div>
-  </section>
-
-  <section id="story" class="story">
-    <div class="wrap story-inner">
-      <div class="story-art" aria-hidden="true">
-        <svg class="story-berry" color="#16223f"><use href="#icon-berry"></use></svg>
-      </div>
-      <div class="story-text">
-        <h2 class="section-title">농장 이야기</h2>
-        <p>
-          충북 영동의 작은 언덕에서 시작한 <strong>황금블루베리굿농원</strong>은
-          10년 넘게 블루베리만 키워온 가족 농장입니다. 흙을 살리는 농법으로
-          나무를 가꾸고, 가장 달콤한 시기에 손으로 직접 따서 보내드려요.
-        </p>
-        <p>
-          포장 박스를 열었을 때 농장의 향이 느껴지는 그 순간까지 책임지는 것이
-          저희의 목표입니다. 작은 농장이지만 정직하게, 오래 함께하고 싶습니다.
-        </p>
-        <p class="story-note">
-          ※ 위 농장 정보는 예시 콘텐츠입니다. 실제 운영 시 농장 소개, 사진,
-          인증 정보 등으로 교체해 주세요.
-        </p>
-      </div>
     </div>
   </section>
 
   <section id="reviews" class="reviews">
     <div class="wrap">
-      <h2 class="section-title">고객 후기</h2>
+      <h2 class="section-title">
+        고객님들의 <span class="accent">생생한 후기</span>
+        <svg class="title-icon" color="#3f9b14"><use href="#icon-leaf"></use></svg>
+      </h2>
       <div class="review-grid">
         <article class="review-card">
+          <img class="review-photo" src="images/product-200g.jpg" alt="" />
           <div class="stars">★★★★★</div>
-          <p>“알이 정말 크고 달아요. 받자마자 향이 확 느껴졌어요.”</p>
+          <h3>알이 크고 정말 달아요!</h3>
+          <p>아침마다 챙겨 먹는데 신선해서 그런지 단맛이 확실히 다르네요.</p>
           <span class="reviewer">구매자 김**님</span>
         </article>
         <article class="review-card">
+          <img class="review-photo" src="images/product-500g.jpg" alt="" />
           <div class="stars">★★★★★</div>
-          <p>“2kg으로 주문했는데 가족이 다 같이 먹기 딱 좋았어요. 재구매 의사 100%.”</p>
+          <h3>매일 아침 건강해졌어요</h3>
+          <p>그릭요거트에 올려 먹는데 온 가족이 다 좋아해요.</p>
           <span class="reviewer">구매자 이**님</span>
         </article>
         <article class="review-card">
+          <img class="review-photo" src="images/product-1kg.jpg" alt="" />
           <div class="stars">★★★★☆</div>
-          <p>“200g 소포장이라 선물용으로 보내기 딱 좋아서 또 주문했어요.”</p>
+          <h3>신선함이 다른 게 느껴져요</h3>
+          <p>배송도 빠르고 포장도 꼼꼼해서 만족스러웠어요.</p>
           <span class="reviewer">구매자 박**님</span>
+        </article>
+        <article class="review-card">
+          <img class="review-photo" src="images/product-2kg.jpg" alt="" />
+          <div class="stars">★★★★★</div>
+          <h3>재구매 의사 100%</h3>
+          <p>농장에서 바로 보내주셔서 그런지 향이 정말 좋았어요.</p>
+          <span class="reviewer">구매자 최**님</span>
         </article>
       </div>
       <p class="story-note center">※ 후기는 예시 콘텐츠입니다. 실제 고객 후기로 교체해 주세요.</p>
     </div>
   </section>
 
+  <section id="story" class="story">
+    <div class="wrap story-inner">
+      <div class="story-text">
+        <p class="eyebrow">자연이 키우고 정성이 담긴</p>
+        <h2 class="story-brand">황금블루베리굿농원</h2>
+        <p>
+          충북 영동의 맑은 공기와 깨끗한 자연에서 무농약으로 건강하게 키운
+          블루베리만 전합니다. 정직한 재배, 신선한 수확, 빠른 배송을 약속드립니다.
+        </p>
+        <div class="story-badges">
+          <div class="story-badge">
+            <svg class="story-badge-icon"><use href="#icon-sun"></use></svg>
+            <span>풍부한 일조량<br>최적의 환경</span>
+          </div>
+          <div class="story-badge">
+            <svg class="story-badge-icon"><use href="#icon-drop"></use></svg>
+            <span>깨끗한 자연<br>맑은 물과 공기</span>
+          </div>
+          <div class="story-badge">
+            <svg class="story-badge-icon"><use href="#icon-check-circle"></use></svg>
+            <span>정성 가득<br>건강한 재배</span>
+          </div>
+        </div>
+        <p class="story-note">
+          ※ 위 농장 정보는 예시 콘텐츠입니다. 실제 운영 시 농장 소개, 사진,
+          인증 정보 등으로 교체해 주세요.
+        </p>
+      </div>
+      <div class="story-art" aria-hidden="true">
+        <svg class="story-berry" color="#0a2a82"><use href="#icon-berry"></use></svg>
+      </div>
+    </div>
+  </section>
+
   <section id="contact" class="contact">
     <div class="wrap contact-inner">
-      <h2 class="section-title">문의 / 주문 안내</h2>
+      <h2 class="section-title">고객센터</h2>
       <p class="section-desc">
         이 쇼핑몰은 별도 결제 시스템 없이 운영됩니다.
         장바구니에 상품을 담고 <strong>주문 요청하기</strong>를 누르면
@@ -222,7 +233,37 @@
 </main>
 
 <footer class="site-footer">
-  <div class="wrap">
+  <div class="wrap footer-grid">
+    <div class="footer-col">
+      <svg class="footer-icon"><use href="#icon-clock"></use></svg>
+      <div>
+        <strong>영업시간 09:00 - 18:00</strong>
+        <span>(토·일·공휴일 휴무)</span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <svg class="footer-icon"><use href="#icon-package"></use></svg>
+      <div>
+        <strong>입금 확인 후</strong>
+        <span>1~2일 내 출고</span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <svg class="footer-icon"><use href="#icon-truck"></use></svg>
+      <div>
+        <strong>신선도 유지를 위한</strong>
+        <span>꼼꼼한 포장</span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <svg class="footer-icon"><use href="#icon-phone"></use></svg>
+      <div>
+        <strong>고객센터 010-0000-0000 (예시)</strong>
+        <span>카카오톡 @golden_blueberry_farm (예시)</span>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-copy">
     <p>© 2026 황금블루베리굿농원. 모든 상품·연락처 정보는 예시이며 실제 운영 정보로 교체해 주세요.</p>
   </div>
 </footer>
